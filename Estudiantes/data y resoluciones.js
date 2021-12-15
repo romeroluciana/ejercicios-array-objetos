@@ -8310,3 +8310,30 @@ const estudiantes = [
     ],
   },
 ];
+
+
+
+
+// Ejercicios ESTUDIANTES
+
+/////////////////////////////////////////////////////////////////////////
+
+//1.`estudiantesPorHechizo`, que tome por parámetro el nombre de un hechizo y un array de estudiantes y devuelva un array con todos les estudiantes que tengan ese hechizo como hechizoPreferido
+
+const estudiantesPorHechizo = (hechizo, estudiantes)=> estudiantes.filter(({hechizoPreferido})=> hechizoPreferido==hechizo);
+
+console.log(estudiantesPorHechizo("Wingardium Leviosa", estudiantes));
+
+/////////////////////////////////////////////////////////////////////////
+
+//2. `estudiantesConMasAmiguesQue`, que tome por parametro un numero y un array de estudiantes y devuelva un array con todos les estudiantes que tengan un número de amigues mayor o igual a el número pasado por parámetro
+
+const estudiantesConMasAmiguesQue = (cantidadDeAmigues, estudiantes) =>
+  estudiantes.filter(({amigues}) => amigues.length >= cantidadDeAmigues).sort((a, b) => b.amigues.length - a.amigues.length);
+
+console.log(estudiantesConMasAmiguesQue(5, estudiantes));
+
+/////////////////////////////////////////////////////////////////////////
+
+//3. `estudiantesConFamiliares`, que tome por parámetro un array con nombres de familiares (p.ej, ["Sapo", "Lechuza"]) y un array de estudiantes y devuelva un array con les estudiantes que tengan cuyo familiar sea alguno de los incluidos en el parámetro
+
