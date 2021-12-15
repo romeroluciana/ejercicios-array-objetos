@@ -4928,6 +4928,10 @@ console.log(artistasConDiscoEnAnio1(2003, artistas));
 /////////////////////////////////////////////////////////////////////////
 
 //9. `artistaConMasCopias`, que devuelva el objeto artista que más copias de discos en total vendió
+
+// SOLUCIONAR ERROR
+
+
 /*const artistaConMasCopias = (artistas) => {
   let accSumaDiscos = 0
   let accMayor = 0
