@@ -1100,3 +1100,49 @@ const empleades = [
     lenguajes: ["Ruby", "JavaScript", "PHP", "Python", "Java"],
   },
 ];
+
+// Ejercicios EMPLEADOS
+
+/////////////////////////////////////////////////////////////////////////
+
+//1.`empleadesQueHacenGuardia`, que devuelva un array con todes les empleades que hacen guardia
+
+const empleadesQueHacenGuardia = (empleades) => empleades.filter(({ haceGuardia }) => haceGuardia);
+
+console.log(empleadesQueHacenGuardia(empleades));
+
+/////////////////////////////////////////////////////////////////////////
+
+//2. `empleadesPorPais`, que tome por parámetro el nombre de un país y devuelva un array con todes les empleades que son de dicho país
+
+const empleadesPorPais = (nombrePais)=> empleades.filter(({pais})=> pais==nombrePais)
+
+console.log(empleadesPorPais("Venezuela"));
+
+/////////////////////////////////////////////////////////////////////////
+
+//3. `empleadesPorArea`, que tome por parámetro el nombre de un área y devuelva un array con todes les empleades que son de dicho área
+
+const empleadesPorArea = (nombreArea)=> empleades.filter(({area})=>area==nombreArea)
+
+console.log(empleadesPorArea("QA"));
+
+/////////////////////////////////////////////////////////////////////////
+
+//4. `empleadesConSueldoMayorA`, que tome por parámetro un número como sueldo y devuelva un array con todes les empleades que tengan un sueldo mayor a dicho número, ordenados de menor a mayor según sueldo
+
+const empleadesConSueldoMayorA= (sueldoP)=> empleades.filter(({sueldo})=>sueldo>=sueldoP).sort((a, b) => a.sueldo - b.sueldo)
+
+console.log(empleadesConSueldoMayorA(74987));
+
+/////////////////////////////////////////////////////////////////////////
+
+//5. `empleadesConMasLenguajes`, que tome por parámetro un número y devuelva un array con aquelles empleades que sepan más lenguajes que dicho número
+
+const empleadesConMasLenguajes = (numero)=> empleades.filter(({lenguajes})=>lenguajes.length>numero)
+
+console.log(empleadesConMasLenguajes(3));
+
+/////////////////////////////////////////////////////////////////////////
+
+//6. `sueldoPromedioEmpleades`, que devuelva el sueldo promedio de todos los empleados
