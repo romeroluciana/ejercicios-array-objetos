@@ -8337,3 +8337,14 @@ console.log(estudiantesConMasAmiguesQue(5, estudiantes));
 
 //3. `estudiantesConFamiliares`, que tome por parámetro un array con nombres de familiares (p.ej, ["Sapo", "Lechuza"]) y un array de estudiantes y devuelva un array con les estudiantes que tengan cuyo familiar sea alguno de los incluidos en el parámetro
 
+const estudiantesConFamiliares  = (arrayFam, estudiantes)=> estudiantes.filter(({familiar})=>arrayFam.includes(familiar))
+
+console.log(estudiantesConFamiliares(["Lechuza", "Sapo", "Salamandra"], estudiantes));
+
+//4. `obtenerPromedioDeEstudiante`, que tome por parámetro une estudiante (que se saca del array estudiantes) y devuelva el promedio total de todas las materias
+
+const obtenerPromedioDeEstudiante = (estudiante)=> estudiantes.reduce((acc, {promedio})=>{
+  return acc+promedio
+}, 0);
+
+console.log(obtenerPromedioDeEstudiante(estudiante));
