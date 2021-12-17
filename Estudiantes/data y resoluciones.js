@@ -8311,10 +8311,96 @@ const estudiantes = [
   },
 ];
 
+//1. `estudiantesPorHechizo`, que tome por parámetro el nombre de un hechizo y un array de estudiantes y devuelva un array con todos les estudiantes que tengan ese hechizo como hechizoPreferido
+
+const estudiantesPorHechizo = (hechizoP, estudiantes) => estudiantes.filter(estudiante => {
+  return estudiante.hechizoPreferido == hechizoP
+})
+
+console.log(estudiantesPorHechizo("Wingardium Leviosa", estudiantes));
+
+
+/*const estudiantesPorHechizo = (hechizo, estudiantes)=> estudiantes.filter(({hechizoPreferido})=> hechizoPreferido==hechizo); */
+
+//2. `estudiantesConMasAmiguesQue`, que tome por parametro un numero y un array de estudiantes y devuelva un array con todos les estudiantes que tengan un número de amigues mayor o igual a el número pasado por parámetro
+
+const estudiantesConMasAmiguesQue = (numeroP, estudiantes) => estudiantes.filter(({ amigues }) => amigues.length >= numeroP);
+
+console.log(estudiantesConMasAmiguesQue(5, estudiantes));
+
+//3. `estudiantesConFamiliares`, que tome por parámetro un array con nombres de familiares (p.ej, ["Sapo", "Lechuza"]) y un array de estudiantes y devuelva un array con les estudiantes cuyo familiar sea alguno de los incluidos en el parámetro
+
+const estudiantesConFamiliares = (famP, estudiantes)=> estudiantes.filter(({familiar})=>famP.includes(familiar));
+
+console.log(estudiantesConFamiliares(["Sapo", "Lechuza"], estudiantes));
+
+//4. `obtenerPromedioDeEstudiante`, que tome por parámetro une estudiante (que se saca del array estudiantes) y devuelva el promedio total de todas las materias
+
+/*const obtenerPromedioDeEstudiante = ({materias})=>{ 
+  let suma = 0
+   materias.forEach(materia=>{
+     console.log(materia);
+     suma += materia.promedio
+   })
+   return suma/ materias.length
+}
+console.log(obtenerPromedioDeEstudiante(estudiantes[0]));
+*/
+const sumaPromedio = (suma,materia)=>{ 
+  suma += materia.promedio
+  return suma // return siempre tiene que retornar el acumulador
+  }
+const obtenerPromedioDeEstudiante = ({materias})=> materias.reduce(sumaPromedio,0)/materias.length // después de la coma va lo que quiero que se me retorne
+
+console.log(obtenerPromedioDeEstudiante(estudiantes[0]));
+
+//5. `estudiantesConPromedioMayorA`, que tome por parámetro un número y un array de estudiantes y devuelva un array con les estudiantes que tengan un promedio total mayor a dicho número (usar la función anterior)
+
+const estudiantesConPromedioMayorA = (promedioP, estudiantes)=>{ 
+ return estudiantes.filter(estudiante=>{
+  return obtenerPromedioDeEstudiante(estudiante) >= promedioP 
+  })
+
+}
+
+console.log(estudiantesConPromedioMayorA(2.75, estudiantes));
 
 
 
-// Ejercicios ESTUDIANTES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* // Ejercicios ESTUDIANTES
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -8347,4 +8433,4 @@ const obtenerPromedioDeEstudiante = (estudiante)=> estudiantes.reduce((acc, {pro
   return acc+promedio
 }, 0);
 
-console.log(obtenerPromedioDeEstudiante(estudiante));
+console.log(obtenerPromedioDeEstudiante(estudiante)); */

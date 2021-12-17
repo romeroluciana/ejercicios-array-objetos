@@ -4932,22 +4932,23 @@ console.log(artistasConDiscoEnAnio1(2003, artistas));
 // SOLUCIONAR ERROR
 
 
-/*const artistaConMasCopias = (artistas) => {
-  let accSumaDiscos = 0
-  let accMayor = 0
-  let masVendio = {}
-  artistas.forEach(artista => {
-    artista.discos.forEach(disco => {
-      accSumaDiscos += disco.copiasVendidas
-      if (accSumaDiscos > accMayor) {
-        accMayor = accSumaDiscos
-        masVendio = artista
-      }
-    });
-  })
-  return masVendio
-}
-console.log(artistaConMasCopias(artistas));*/
+const artistaConMasCopias = (artistas) => {
+    let accSumaDiscos = 0 
+    let accMayor = 0 
+    let masVendio = {} 
+    artistas.forEach(artista => { 
+     artista.discos.forEach(disco => {
+       accSumaDiscos += disco.copiasVendidas 
+     }); 
+     if (accSumaDiscos > accMayor) { 
+       accMayor = accSumaDiscos 
+       masVendio = artista 
+     } 
+     }) 
+     return masVendio 
+   }
+ 
+console.log(artistaConMasCopias(artistas));
 
 
 
@@ -4960,6 +4961,57 @@ const aPersonaConMasDinero = (personaConMasDinero, persona) =>
   persona.dinero > personaConMasDinero.dinero ? persona : personaConMasDinero
 const resultado = personas.reduce(aPersonaConMasDinero)
 console.log(resultado);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
