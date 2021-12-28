@@ -8317,6 +8317,7 @@ const estudiantesPorHechizo = (hechizoP, estudiantes) => estudiantes.filter(estu
   return estudiante.hechizoPreferido == hechizoP
 })
 
+
 console.log(estudiantesPorHechizo("Wingardium Leviosa", estudiantes));
 
 
@@ -8330,7 +8331,7 @@ console.log(estudiantesConMasAmiguesQue(5, estudiantes));
 
 //3. `estudiantesConFamiliares`, que tome por parámetro un array con nombres de familiares (p.ej, ["Sapo", "Lechuza"]) y un array de estudiantes y devuelva un array con les estudiantes cuyo familiar sea alguno de los incluidos en el parámetro
 
-const estudiantesConFamiliares = (famP, estudiantes)=> estudiantes.filter(({familiar})=>famP.includes(familiar));
+const estudiantesConFamiliares = (famP, estudiantes) => estudiantes.filter(({ familiar }) => famP.includes(familiar));
 
 console.log(estudiantesConFamiliares(["Sapo", "Lechuza"], estudiantes));
 
@@ -8346,19 +8347,19 @@ console.log(estudiantesConFamiliares(["Sapo", "Lechuza"], estudiantes));
 }
 console.log(obtenerPromedioDeEstudiante(estudiantes[0]));
 */
-const sumaPromedio = (suma,materia)=>{ 
+const sumaPromedio = (suma, materia) => {
   suma += materia.promedio
   return suma // return siempre tiene que retornar el acumulador
-  }
-const obtenerPromedioDeEstudiante = ({materias})=> materias.reduce(sumaPromedio,0)/materias.length // después de la coma va lo que quiero que se me retorne
+}
+const obtenerPromedioDeEstudiante = ({ materias }) => materias.reduce(sumaPromedio, 0) / materias.length // después de la coma va lo que quiero que se me retorne
 
 console.log(obtenerPromedioDeEstudiante(estudiantes[0]));
 
 //5. `estudiantesConPromedioMayorA`, que tome por parámetro un número y un array de estudiantes y devuelva un array con les estudiantes que tengan un promedio total mayor a dicho número (usar la función anterior)
 
-const estudiantesConPromedioMayorA = (promedioP, estudiantes)=>{ 
- return estudiantes.filter(estudiante=>{
-  return obtenerPromedioDeEstudiante(estudiante) >= promedioP 
+const estudiantesConPromedioMayorA = (promedioP, estudiantes) => {
+  return estudiantes.filter(estudiante => {
+    return obtenerPromedioDeEstudiante(estudiante) >= promedioP
   })
 
 }
@@ -8366,19 +8367,13 @@ const estudiantesConPromedioMayorA = (promedioP, estudiantes)=>{
 console.log(estudiantesConPromedioMayorA(2.75, estudiantes));
 
 
+//6. `mejoresEstudiantesPorCasa`, que tome por parámetro el nombre de una casa y un array de estudiantes y devuelva les estudiantes de dicha casa cuyo promedio total es mayor a 6
 
-
-
-
-
-
-
-
-
-
-
-
-
+  const mejoresEstudiantesPorCasa = (casaP, estudiantes) => {
+    let estudiantesProm = estudiantes.filter(estudiante =>estudiante.casa == casaP)
+    return estudiantesConPromedioMayorA(6, estudiantesProm)
+  }
+  console.log(mejoresEstudiantesPorCasa("Hufflepuff", estudiantes));
 
 
 
